@@ -11,7 +11,6 @@ function mainContent({ userInp, click, setOldData, oldData }) {
 
     setOldData(filtered);
   }, [userInp, click]);
-  console.log(oldData.length);
   return (
     <>
       <Main_hero_Two>
@@ -186,7 +185,7 @@ const CardContainer = styled.div`
   }
   .status {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
     button {
       width: 90%;
@@ -208,7 +207,7 @@ const CardContainer = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    width: 150px;
+    width: 100px;
     h1 {
       font-size: 14px;
     }
@@ -219,7 +218,7 @@ const CardContainer = styled.div`
       font-size: 16px;
     }
     .price-avb button {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       height: 1.1rem;
       text-transform: uppercase;
       width: 100%;

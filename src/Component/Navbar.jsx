@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
 import navImg from "../assets/IMGS/nav img.png";
 import Data from "./Data";
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 function Navbar({ setUserInp, setOldData, oldData }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let [btn, setBtn] = useState("");
@@ -44,6 +44,17 @@ function Navbar({ setUserInp, setOldData, oldData }) {
           <Link to="/">
             <li
               onClick={() => {
+                // setBtn(Data);
+                setOldData(Data)
+                setUserInp('');
+              }}
+            >
+              <a>All</a>
+            </li>
+          </Link>
+          <Link to="/">
+            <li
+              onClick={() => {
                 setBtn("antique");
                 setUserInp("");
               }}
@@ -51,6 +62,7 @@ function Navbar({ setUserInp, setOldData, oldData }) {
               <a>Antiques</a>
             </li>
           </Link>
+          
           <Link to="/">
             <li
               onClick={() => {
@@ -107,6 +119,11 @@ const Wrapper = styled.div`
     border-bottom: 2px solid var(--border_color);
     padding: 0 1rem;
     position: relative;
+  font-family: "Bebas Neue", serif;
+  font-weight: 700;
+
+  font-style: bold;
+  letter-spacing: 2px;
   }
   .logo {
     height: 4rem;
@@ -152,9 +169,7 @@ const Wrapper = styled.div`
     padding: 5px 14px;
     border-radius: 5px;
     transition: 0.3s ease;
-    font-family: "Bebas Neue", serif;
-    font-weight: 700;
-    &:hover {
+      &:hover {
       background-color: #d3ad69;
       border-radius: 15px;
     }
@@ -182,6 +197,8 @@ const Wrapper = styled.div`
       flex-direction: column;
       justify-content: flex-start;
       height: auto;
+      overflow: hidden;
+
       padding: 0.3rem;
     }
     .search {
@@ -206,20 +223,3 @@ const Wrapper = styled.div`
     }
   }
 `;
-// const Link= styled.div`
-//  li {
-//     background-color: #ffcb70;
-//     color: black;
-//     font-weight: 600;
-//     font-size: 1rem;
-//     padding: 5px 14px;
-//     border-radius: 5px;
-//     transition: 0.3s ease;
-//     font-family: "Bebas Neue", serif;
-//     font-weight: 700;
-//     &:hover {
-//       background-color: #d3ad69;
-//       border-radius: 15px;
-//     }
-//   }
-// `
